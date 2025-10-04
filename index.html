@@ -21,16 +21,16 @@
                 </div>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#" class="active" onclick="navigate('beranda', event)">Beranda</a></li>
-                <li><a href="#" onclick="navigate('profil', event)">Profil</a></li>
-                <li><a href="#" onclick="navigate('mahasiswa', event)">Mahasiswa</a></li>
-                <li><a href="#" onclick="navigate('kontak', event)">Kontak</a></li>
+                <li><a href="#beranda" data-page="beranda" class="active" aria-current="page">Beranda</a></li>
+                <li><a href="#profil" data-page="profil">Profil</a></li>
+                <li><a href="#mahasiswa" data-page="mahasiswa">Mahasiswa</a></li>
+                <li><a href="#kontak" data-page="kontak">Kontak</a></li>
             </ul>
-            <div class="mobile-toggle" id="mobileToggle" onclick="toggleMobile()">
+            <button class="mobile-toggle" id="mobileToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
