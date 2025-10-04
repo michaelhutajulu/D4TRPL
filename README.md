@@ -180,9 +180,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 👨‍💻 Author
 
 **D4 TRPL Team**
-- Website: [d4trpl.university.ac.id](https://d4trpl.university.ac.id)
+- Website: [d4trpl.university.ac.id]([https://d4trpl.university.ac.id](https://michaelhutajulu.github.io/D4TRPL/))
 - Email: d4trpl@university.ac.id
-- Instagram: [@d4trpl_2025](https://instagram.com/d4trpl_2025)
+- Instagram: [@d4.trpl_24]([https://instagram.com/d4trpl_2025](https://www.instagram.com/d4.trpl_24?igsh=MTJldmVwdW5oemd2Zw==))
 
 ## 🙏 Acknowledgments
 
