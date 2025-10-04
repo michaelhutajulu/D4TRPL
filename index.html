@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D4 TRPL - Elite Software Engineering</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-box"></div>
+                <div class="logo-text">
+                    <h1>D4 TRPL</h1>
+                    <p>Elite 2025</p>
+                </div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="active" onclick="navigate('beranda', event)">Beranda</a></li>
+                <li><a href="#" onclick="navigate('profil', event)">Profil</a></li>
+                <li><a href="#" onclick="navigate('mahasiswa', event)">Mahasiswa</a></li>
+                <li><a href="#" onclick="navigate('kontak', event)">Kontak</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle" onclick="toggleMobile()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Beranda Page -->
+        <div id="beranda" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-badge">
+                        <span>✨</span>
+                        <span>Welcome to Excellence</span>
+                    </div>
+                    <h1>D4 TRPL</h1>
+                    <p>Teknologi Rekayasa Perangkat Lunak — Crafting Tomorrow's Digital Solutions</p>
+                </div>
+
+                <div class="main-photo-container">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=550&fit=crop" alt="D4 TRPL Class">
+                    <div class="photo-caption">
+                        <h3>The Future Makers</h3>
+                        <p>32 Brilliant Minds United in Technology</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Galeri Kegiatan</h2>
+                <div class="gallery-container">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop" alt="Workshop">
+                            <div class="gallery-label">
+                                <h4>Intensive Workshop</h4>
+                                <p>Advanced Coding Bootcamp</p>
+                            </div>
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" alt="Team">
+                            <div class="gallery-label">
+                                <h4>Team Collaboration</h4>
+                                <p>Building Innovative Solutions</p>
+                            </div>
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Presentation">
+                            <div class="gallery-label">
+                                <h4>Final Presentation</h4>
+                                <p>Showcasing Excellence</p>
+                            </div>
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop" alt="Seminar">
+                            <div class="gallery-label">
+                                <h4>Tech Seminar</h4>
+                                <p>Industry Expert Insights</p>
+                            </div>
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&h=300&fit=crop" alt="Hackathon">
+                            <div class="gallery-label">
+                                <h4>24H Hackathon</h4>
+                                <p>Code, Innovate, Win</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Jadwal Kuliah Mingguan</h2>
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <div class="schedule-day">Senin</div>
+                        <ul class="course-list">
+                            <li class="course-item">08:00 - 10:00 | Pemrograman Web Lanjut</li>
+                            <li class="course-item">10:30 - 12:30 | Basis Data Terdistribusi</li>
+                            <li class="course-item">13:00 - 15:00 | Rekayasa Perangkat Lunak</li>
+                        </ul>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Selasa</div>
+                        <ul class="course-list">
+                            <li class="course-item">08:00 - 10:00 | Algoritma & Struktur Data</li>
+                            <li class="course-item">10:30 - 12:30 | UI/UX Design Thinking</li>
+                            <li class="course-item">13:00 - 15:00 | Manajemen Proyek IT</li>
+                        </ul>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Rabu</div>
+                        <ul class="course-list">
+                            <li class="course-item">08:00 - 10:00 | Mobile App Development</li>
+                            <li class="course-item">10:30 - 12:30 | Cloud Computing & DevOps</li>
+                            <li class="course-item">13:00 - 15:00 | Cybersecurity Essentials</li>
+                        </ul>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Kamis</div>
+                        <ul class="course-list">
+                            <li class="course-item">08:00 - 10:00 | Artificial Intelligence</li>
+                            <li class="course-item">10:30 - 12:30 | Data Science & Analytics</li>
+                            <li class="course-item">13:00 - 16:00 | Practical Workshop</li>
+                        </ul>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Jumat</div>
+                        <ul class="course-list">
+                            <li class="course-item">08:00 - 10:00 | Internet of Things</li>
+                            <li class="course-item">10:30 - 12:30 | Blockchain Technology</li>
+                            <li class="course-item">13:00 - 15:00 | Capstone Project</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profil Page -->
+        <div id="profil" class="page">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-badge">
+                        <span>🎓</span>
+                        <span>About Us</span>
+                    </div>
+                    <h1 style="font-size: 4rem;">Profil Program Studi</h1>
+                </div>
+
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1100&h=600&fit=crop" alt="TRPL Students">
+                    </div>
+
+                    <div class="profile-content">
+                        <h2>D4 Teknologi Rekayasa Perangkat Lunak</h2>
+                        <p>
+                            Program Studi Diploma IV Teknologi Rekayasa Perangkat Lunak (D4 TRPL) adalah pusat keunggulan dalam pendidikan vokasi teknologi informasi. Kami berkomitmen untuk menghasilkan lulusan yang tidak hanya menguasai teori, tetapi juga mahir dalam praktik pengembangan perangkat lunak skala industri.
+                        </p>
+                        <p>
+                            Kurikulum kami dirancang dengan cermat bersama mitra industri terkemuka, memastikan setiap mahasiswa mendapatkan pengalaman pembelajaran yang relevan dan aplikatif. Dari web development, mobile applications, hingga cutting-edge technologies seperti artificial intelligence, cloud computing, dan blockchain — kami mempersiapkan mahasiswa untuk menjadi technology leader masa depan.
+                        </p>
+                        <p>
+                            Dengan laboratorium berstandar internasional, dosen praktisi berpengalaman, dan ekosistem pembelajaran yang mendukung inovasi, D4 TRPL bukan hanya tempat belajar, tetapi inkubator bagi para inovator digital. Kami percaya bahwa setiap mahasiswa memiliki potensi luar biasa untuk menciptakan solusi teknologi yang mengubah dunia.
+                        </p>
+                        <p>
+                            Bergabunglah dengan kami dan jadilah bagian dari generasi software engineer yang siap menghadapi tantangan era digital, menciptakan inovasi berkelanjutan, dan membawa perubahan positif bagi masyarakat melalui teknologi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mahasiswa Page -->
+        <div id="mahasiswa" class="page">
+            <div class="container">
+                <div id="dosenView">
+                    <div class="hero">
+                        <div class="hero-badge">
+                            <span>👥</span>
+                            <span>Our Team</span>
+                        </div>
+                        <h1 style="font-size: 4rem;">Dosen Wali</h1>
+                        <p>Pilih dosen wali untuk melihat mahasiswa bimbingan</p>
+                    </div>
+
+                    <div class="dosen-container">
+                        <div class="dosen-card" onclick="showStudents('dosen1')">
+                            <div class="dosen-avatar">AP</div>
+                            <div class="dosen-info">
+                                <h3>Dr. Ahmad Prasetyo, M.Kom</h3>
+                                <p>Dosen Wali Kelas A</p>
+                                <p>NIP: 198505152010121001</p>
+                                <div class="dosen-specialty">Software Engineering & AI</div>
+                                <br>
+                                <button class="btn-lihat">Lihat Mahasiswa</button>
+                            </div>
+                        </div>
+                        <div class="dosen-card" onclick="showStudents('dosen2')">
+                            <div class="dosen-avatar">SN</div>
+                            <div class="dosen-info">
+                                <h3>Dr. Siti Nurhaliza, M.T</h3>
+                                <p>Dosen Wali Kelas B</p>
+                                <p>NIP: 198703202011012002</p>
+                                <div class="dosen-specialty">Web Development & UI/UX</div>
+                                <br>
+                                <button class="btn-lihat">Lihat Mahasiswa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentsList1" class="students-view">
+                    <button class="btn-back" onclick="backToDosen()">← Kembali</button>
+                    <h2 class="section-title">Mahasiswa Bimbingan Dr. Ahmad Prasetyo</h2>
+                    <div class="students-grid">
+                        <div class="student-card">
+                            <div class="student-avatar">AF</div>
+                            <h4>Ahmad Fauzi</h4>
+                            <p>NIM: 2101010001</p>
+                            <p>Full Stack Developer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">BS</div>
+                            <h4>Budi Santoso</h4>
+                            <p>NIM: 2101010003</p>
+                            <p>Mobile Developer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">EP</div>
+                            <h4>Eko Prasetyo</h4>
+                            <p>NIM: 2101010005</p>
+                            <p>Backend Engineer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">RW</div>
+                            <h4>Rizki Wijaya</h4>
+                            <p>NIM: 2101010007</p>
+                            <p>DevOps Specialist</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">IA</div>
+                            <h4>Indra Aditya</h4>
+                            <p>NIM: 2101010009</p>
+                            <p>Data Scientist</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">FA</div>
+                            <h4>Fajar Alamsyah</h4>
+                            <p>NIM: 2101010011</p>
+                            <p>AI Engineer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">AP</div>
+                            <h4>Andi Permana</h4>
+                            <p>NIM: 2101010013</p>
+                            <p>Cloud Architect</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">DH</div>
+                            <h4>Dimas Hakim</h4>
+                            <p>NIM: 2101010015</p>
+                            <p>Security Expert</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="studentsList2" class="students-view">
+                    <button class="btn-back" onclick="backToDosen()">← Kembali</button>
+                    <h2 class="section-title">Mahasiswa Bimbingan Dr. Siti Nurhaliza</h2>
+                    <div class="students-grid">
+                        <div class="student-card">
+                            <div class="student-avatar">SN</div>
+                            <h4>Siti Nurjanah</h4>
+                            <p>NIM: 2101010002</p>
+                            <p>Frontend Developer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">DK</div>
+                            <h4>Dewi Kartika</h4>
+                            <p>NIM: 2101010004</p>
+                            <p>UI/UX Designer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">FH</div>
+                            <h4>Fitri Handayani</h4>
+                            <p>NIM: 2101010006</p>
+                            <p>Web Developer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">LM</div>
+                            <h4>Linda Marlina</h4>
+                            <p>NIM: 2101010008</p>
+                            <p>React Specialist</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">NS</div>
+                            <h4>Nurul Safitri</h4>
+                            <p>NIM: 2101010010</p>
+                            <p>Product Designer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">PD</div>
+                            <h4>Putri Diani</h4>
+                            <p>NIM: 2101010012</p>
+                            <p>QA Engineer</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">RA</div>
+                            <h4>Rina Andini</h4>
+                            <p>NIM: 2101010014</p>
+                            <p>Scrum Master</p>
+                        </div>
+                        <div class="student-card">
+                            <div class="student-avatar">VA</div>
+                            <h4>Vina Agustina</h4>
+                            <p>NIM: 2101010016</p>
+                            <p>Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kontak Page -->
+        <div id="kontak" class="page">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-badge">
+                        <span>📬</span>
+                        <span>Get In Touch</span>
+                    </div>
+                    <h1 style="font-size: 4rem;">Hubungi Kami</h1>
+                    <p>Kami siap membantu dan menjawab pertanyaan Anda</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Alamat Kampus</h3>
+                        <p>Gedung Teknologi Informasi</p>
+                        <p>Jl. Pendidikan No. 123</p>
+                        <p>Medan, Sumatera Utara 20123</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>d4trpl@university.ac.id</p>
+                        <p>info.trpl@university.ac.id</p>
+                        <p>admisi.trpl@university.ac.id</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Telepon & WhatsApp</h3>
+                        <p>Ketua Kelas: +62 812-3456-7890</p>
+                        <p>Sekretariat: +62 061-1234567</p>
+                        <p>Admin Prodi: +62 813-9876-5432</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🌐</div>
+                        <h3>Media Sosial</h3>
+                        <p>Instagram: @d4trpl_2025</p>
+                        <p>LinkedIn: D4 TRPL Elite 2025</p>
+                        <p>YouTube: D4 TRPL Channel</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">⏰</div>
+                        <h3>Jam Operasional</h3>
+                        <p>Senin - Jumat: 08:00 - 16:00 WIB</p>
+                        <p>Sabtu: 08:00 - 12:00 WIB</p>
+                        <p>Minggu & Libur: Tutup</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <h3>Kerjasama & Partnership</h3>
+                        <p>partnership@university.ac.id</p>
+                        <p>Hubungi untuk kolaborasi industri</p>
+                        <p>dan program magang mahasiswa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 D4 TRPL - Teknologi Rekayasa Perangkat Lunak</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Crafted with Excellence by Software Engineering Elite</p>
+    </footer>
+          <script src="script.js"></script>
+</body>
+</html>
