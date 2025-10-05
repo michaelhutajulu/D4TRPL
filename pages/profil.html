@@ -1,3 +1,45 @@
+<head>
+    <style>
+.profile-container {
+    display: flex;
+    justify-content: center;   /* isi rata tengah */
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px auto;        /* auto biar tengah di parent */
+    max-width: 1100px;        /* batas maksimal biar ga kepanjangan */
+}
+
+
+        .profile-video {
+            background: rgba(255, 255, 255, 0.05); /* efek bubble */
+            border-radius: 16px;
+            padding: 10px;
+            width: 320px;   /* lebar card tetap */
+            height: 200px;  /* tinggi card tetap */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+        }
+
+        .profile-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* isi penuh card, tetap rapi */
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+
+
 <div class="container">
     <div class="hero">
         <div class="hero-badge">
@@ -11,6 +53,34 @@
         <div class="profile-image">
             <img src="images/gsg.jpg" alt="TRPL Students">
         </div>
+
+        <div class="profile-container">
+    <div class="profile-video">
+        <video width="320" height="240" controls>
+            <source src="videos/profil.mp4" type="video/mp4">
+            Browser kamu tidak mendukung tag video.
+        </video>
+    </div>
+</div>
+
+        <div class="profile-container">
+    <div class="profile-video">
+        <video width="320" height="240" controls>
+            <source src="videos/profil2.mp4" type="video/mp4">
+            Browser kamu tidak mendukung tag video.
+        </video>
+    </div>
+</div>
+
+        <div class="profile-container">
+    <div class="profile-video">
+        <video width="320" height="240" controls>
+            <source src="videos/profil3.mp4" type="video/mp4">
+            Browser kamu tidak mendukung tag video.
+        </video>
+    </div>
+</div>
+
 
         <div class="profile-content">
             <h2>D4 Teknologi Rekayasa Perangkat Lunak</h2>
