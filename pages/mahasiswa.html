@@ -1,636 +1,742 @@
+<head>
+  <style>
+    .dosen-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* bikin bulat */
+      overflow: hidden; /* supaya gambar nggak keluar lingkaran */
+      border: 3px solid #ffd700; /* contoh border emas biar konsisten */
+      margin: 0 auto 15px; /* biar ke tengah */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111; /* background fallback */
+    }
+
+    .dosen-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* gambar penuh lingkaran, tanpa melar aneh */
+      display: block;
+    }
+  </style>
+</head>
+
 <div class="container">
-    <div id="dosenView">
-        <div class="hero">
-            <div class="hero-badge">
-                <span>👥</span>
-                <span>Our Class</span>
-            </div>
-            <h1 style="font-size: 4rem;">Dosen Wali</h1>
-            <p>Pilih dosen wali untuk melihat mahasiswa bimbingan</p>
-        </div>
-
-        <div class="dosen-container">
-            <div class="dosen-card" onclick="showStudents('dosen1')">
-                <div class="dosen-avatar">CN</div>
-                <div class="dosen-info">
-                    <h3>Cynthia Deborah Nababan, S.Tr.Kom., M.Kom.</h3>
-                    <p>Dosen Wali 42TRPL1</p>
-                    <p>NIP: 198505152010121001</p>
-                    <div class="dosen-specialty">Software Engineering</div>
-                    <br>
-                    <button class="btn-lihat">Lihat Mahasiswa</button>
-                </div>
-            </div>
-            <div class="dosen-card" onclick="showStudents('dosen2')">
-                <div class="dosen-avatar">AS</div>
-                <div class="dosen-info">
-                    <h3>Dr. Arnaldo Marulitua Sinaga, ST., M.InfoTech.</h3>
-                    <p>Dosen Wali 42TRPL2</p>
-                    <p>NIP: 198703202011012002</p>
-                    <div class="dosen-specialty">Web Development & Software Engineering</div>
-                    <br>
-                    <button class="btn-lihat">Lihat Mahasiswa</button>
-                </div>
-            </div>
-        </div>
+  <div id="dosenView">
+    <div class="hero">
+      <div class="hero-badge">
+        <span>👥</span>
+        <span>Our Class</span>
+      </div>
+      <h1 style="font-size: 4rem">Dosen Wali</h1>
+      <p>Pilih dosen wali untuk melihat mahasiswa bimbingan</p>
     </div>
 
-    <div id="studentsList1" class="students-view">
+    <div class="dosen-container">
+      <div class="dosen-card" onclick="showStudents('dosen1')">
+        <div class="dosen-avatar">
+          <img src="images/mahasiswa/TRPL2.png" alt="Foto Dosen" />
+        </div>
+
+        <div class="dosen-info">
+          <h3>Cynthia Deborah Nababan, S.Tr.Kom., M.Kom.</h3>
+          <p>Dosen Wali 42TRPL1</p>
+          <p>NIP: 198505152010121001</p>
+          <div class="dosen-specialty">Software Engineering</div>
+          <br />
+          <button class="btn-lihat">Lihat Mahasiswa</button>
+        </div>
+      </div>
+      <div class="dosen-card" onclick="showStudents('dosen2')">
+        <div class="dosen-avatar">
+          <img src="images/mahasiswa/TRPL2.png" alt="Foto Dosen" />
+        </div>
+
+        <div class="dosen-info">
+          <h3>Dr. Arnaldo Marulitua Sinaga, ST., M.InfoTech.</h3>
+          <p>Dosen Wali 42TRPL2</p>
+          <p>NIP: 198703202011012002</p>
+          <div class="dosen-specialty">
+            Web Development & Software Engineering
+          </div>
+          <br />
+          <button class="btn-lihat">Lihat Mahasiswa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="studentsList1" class="students-view">
     <button class="btn-back" onclick="backToDosen()">← Kembali</button>
-    <h2 class="section-title">Mahasiswa Bimbingan Dosen Cynthia Deborah Nababan, S.Tr.Kom., M.Kom.</h2>
+    <h2 class="section-title">
+      Mahasiswa Bimbingan Dosen Cynthia Deborah Nababan, S.Tr.Kom., M.Kom.
+    </h2>
     <div class="students-grid">
-        <!-- Mahasiswa 1 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/1.jpg" alt="Andika Bartolomeus Purba">
-            </div>
-            <h4>Andika Bartolomeus Purba</h4>
-            <p>NIM: 41424001</p>
+      <!-- Mahasiswa 1 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/1.jpg" alt="Andika Bartolomeus Purba" />
         </div>
-        
-        <!-- Mahasiswa 2 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/2.jpg" alt="Andrey Kurnia Bahtiar Silalahi">
-            </div>
-            <h4>Andrey Kurnia Bahtiar Silalahi</h4>
-            <p>NIM: 41424002</p>
-        </div>
-        
-        <!-- Mahasiswa 3 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Hizkia+Cristian+Siahaan&background=f59e0b&color=0a0a0a&bold=true&size=90" alt="Hizkia Cristian Siahaan">
-            </div>
-            <h4>Hizkia Cristian Siahaan</h4>
-            <p>NIM: 41424003</p>
-        </div>
-        
-        <!-- Mahasiswa 4 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/4.jpg" alt="David Gian Filbert Sinurat">
-            </div>
-            <h4>David Gian Filbert Sinurat</h4>
-            <p>NIM: 41424004</p>
-        </div>
-        
-        <!-- Mahasiswa 5 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Mangatur+Jeremi+Silitonga&background=f59e0b&color=0a0a0a&bold=true&size=90" alt="Mangatur Jeremi Silitonga">
-            </div>
-            <h4>Mangatur Jeremi Silitonga</h4>
-            <p>NIM: 41424005</p>
-        </div>
-        
-        <!-- Mahasiswa 6 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/6.jpg" alt="Nahesson Sugos Nainggolan">
-            </div>
-            <h4>Nahesson Sugos Nainggolan</h4>
-            <p>NIM: 41424006</p>
-        </div>
-        
-        <!-- Mahasiswa 7 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Jesica+Rouli+Tua+Napitupulu&background=f59e0b&color=0a0a0a&bold=true&size=90" alt="Jesica Rouli Tua Napitupulu">
-            </div>
-            <h4>Jesica Rouli Tua Napitupulu</h4>
-            <p>NIM: 41424007</p>
-        </div>
-        
-        <!-- Mahasiswa 8 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/8.jpg" alt="Bintang Jesisca Tanjung">
-            </div>
-            <h4>Bintang Jesisca Tanjung</h4>
-            <p>NIM: 41424008</p>
-        </div>
-        
-        <!-- Mahasiswa 9 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/9.jpg" alt="Angie Solita Sitorus">
-            </div>
-            <h4>Angie Solita Sitorus</h4>
-            <p>NIM: 41424009</p>
-        </div>
-        
-        <!-- Mahasiswa 10 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/10.jpg" alt="De Pedro Monang Pane">
-            </div>
-            <h4>De Pedro Monang Pane</h4>
-            <p>NIM: 41424010</p>
-        </div>
-        
-        <!-- Mahasiswa 11 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/11.jpg" alt="Crisman Oliver Siagian">
-            </div>
-            <h4>Crisman Oliver Siagian</h4>
-            <p>NIM: 41424011</p>
-        </div>
-        
-        <!-- Mahasiswa 12 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/12.jpg" alt="Michael Gokma Tua Hutajulu">
-            </div>
-            <h4>Michael Gokma Tua Hutajulu</h4>
-            <p>NIM: 41424012</p>
-        </div>
-        
-        <!-- Mahasiswa 13 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/13.jpg" alt="Arjuna Melix Sihombing">
-            </div>
-            <h4>Arjuna Melix Sihombing</h4>
-            <p>NIM: 41424013</p>
-        </div>
-        
-        <!-- Mahasiswa 14 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/14.jpg" alt="Tristan Pandris Pasaribu">
-            </div>
-            <h4>Tristan Pandris Pasaribu</h4>
-            <p>NIM: 41424014</p>
-        </div>
-        
-        <!-- Mahasiswa 15 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/15.jpg" alt="Samuel Bona Tua Hutagaol">
-            </div>
-            <h4>Samuel Bona Tua Hutagaol</h4>
-            <p>NIM: 41424015</p>
-        </div>
-        
-        <!-- Mahasiswa 16 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/16.jpg" alt="Ruben Kristian Hamonangan Tambunan">
-            </div>
-            <h4>Ruben Kristian Hamonangan Tambunan</h4>
-            <p>NIM: 41424016</p>
-        </div>
-        
-        <!-- Mahasiswa 17 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/17.jpg" alt="Jamot Togu Suryadi Sigiro">
-            </div>
-            <h4>Jamot Togu Suryadi Sigiro</h4>
-            <p>NIM: 41424017</p>
-        </div>
-        
-        <!-- Mahasiswa 18 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/18.jpg" alt="Chantique Amorelia Shetty Nababan">
-            </div>
-            <h4>Chantique Amorelia Shetty Nababan</h4>
-            <p>NIM: 41424018</p>
-        </div>
-        
-        <!-- Mahasiswa 19 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/19.jpg" alt="Lastri Anna Hutagalung">
-            </div>
-            <h4>Lastri Anna Hutagalung</h4>
-            <p>NIM: 41424019</p>
-        </div>
-        
-        <!-- Mahasiswa 20 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/20.jpg" alt="Novsiana Ribka Masnauli Silalahi">
-            </div>
-            <h4>Novsiana Ribka Masnauli Silalahi</h4>
-            <p>NIM: 41424020</p>
-        </div>
-        
-        <!-- Mahasiswa 21 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/21.jpg" alt="Neuree Daniela Gianik Siagian">
-            </div>
-            <h4>Neuree Daniela Gianik Siagian</h4>
-            <p>NIM: 41424021</p>
-        </div>
-        
-        <!-- Mahasiswa 22 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/22.jpg" alt="Haryati Hutapea">
-            </div>
-            <h4>Haryati Hutapea</h4>
-            <p>NIM: 41424022</p>
-        </div>
-        
-        <!-- Mahasiswa 23 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/23.jpg" alt="Win Grace Sitanggang">
-            </div>
-            <h4>Win Grace Sitanggang</h4>
-            <p>NIM: 41424023</p>
-        </div>
-        
-        <!-- Mahasiswa 24 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/24.jpg" alt="Krisna Putra Immanuel Lumbantoruan">
-            </div>
-            <h4>Krisna Putra Immanuel Lumbantoruan</h4>
-            <p>NIM: 41424024</p>
-        </div>
-        
-        <!-- Mahasiswa 25 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/25.jpg" alt="Yoel Lasova Hutabarat">
-            </div>
-            <h4>Yoel Lasova Hutabarat</h4>
-            <p>NIM: 41424025</p>
-        </div>
-        
-        <!-- Mahasiswa 26 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/26.jpg" alt="Shinta Eldo Marpaung">
-            </div>
-            <h4>Shinta Eldo Marpaung</h4>
-            <p>NIM: 41424026</p>
-        </div>
-        
-        <!-- Mahasiswa 27 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/27.jpg" alt="Galde Rylin Hutasoit">
-            </div>
-            <h4>Galde Rylin Hutasoit</h4>
-            <p>NIM: 41424027</p>
-        </div>
-        
-        <!-- Mahasiswa 28 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/28.jpg" alt="Rosseva Aprilia Tamba">
-            </div>
-            <h4>Rosseva Aprilia Tamba</h4>
-            <p>NIM: 41424028</p>
-        </div>
-        
-        <!-- Mahasiswa 29 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/29.jpg" alt="Shandra Grace Nainggolan">
-            </div>
-            <h4>Shandra Grace Nainggolan</h4>
-            <p>NIM: 41424029</p>
-        </div>
-        
-        <!-- Mahasiswa 30 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/30.jpg" alt="Gracesya Angelina Simanjuntak">
-            </div>
-            <h4>Gracesya Angelina Simanjuntak</h4>
-            <p>NIM: 41424030</p>
-        </div>
-        
-        <!-- Mahasiswa 31 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/31.jpg" alt="Elisabeth Putri Panggabean">
-            </div>
-            <h4>Elisabeth Putri Panggabean</h4>
-            <p>NIM: 41424031</p>
-        </div>
-        
-        <!-- Mahasiswa 32 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/32.jpg" alt="Rima Mutiara Gultom">
-            </div>
-            <h4>Rima Mutiara Gultom</h4>
-            <p>NIM: 41424032</p>
-        </div>
-        
-        <!-- Mahasiswa 33 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/33.jpg" alt="Nicky Rotin Suluh Manullang">
-            </div>
-            <h4>Nicky Rotin Suluh Manullang</h4>
-            <p>NIM: 41424033</p>
-        </div>
-    </div>
-</div>
+        <h4>Andika Bartolomeus Purba</h4>
+        <p>NIM: 41424001</p>
+      </div>
 
-<div id="studentsList2" class="students-view">
+      <!-- Mahasiswa 2 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/2.jpg"
+            alt="Andrey Kurnia Bahtiar Silalahi"
+          />
+        </div>
+        <h4>Andrey Kurnia Bahtiar Silalahi</h4>
+        <p>NIM: 41424002</p>
+      </div>
+
+      <!-- Mahasiswa 3 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Hizkia+Cristian+Siahaan&background=f59e0b&color=0a0a0a&bold=true&size=90"
+            alt="Hizkia Cristian Siahaan"
+          />
+        </div>
+        <h4>Hizkia Cristian Siahaan</h4>
+        <p>NIM: 41424003</p>
+      </div>
+
+      <!-- Mahasiswa 4 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/4.jpg" alt="David Gian Filbert Sinurat" />
+        </div>
+        <h4>David Gian Filbert Sinurat</h4>
+        <p>NIM: 41424004</p>
+      </div>
+
+      <!-- Mahasiswa 5 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Mangatur+Jeremi+Silitonga&background=f59e0b&color=0a0a0a&bold=true&size=90"
+            alt="Mangatur Jeremi Silitonga"
+          />
+        </div>
+        <h4>Mangatur Jeremi Silitonga</h4>
+        <p>NIM: 41424005</p>
+      </div>
+
+      <!-- Mahasiswa 6 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/6.jpg" alt="Nahesson Sugos Nainggolan" />
+        </div>
+        <h4>Nahesson Sugos Nainggolan</h4>
+        <p>NIM: 41424006</p>
+      </div>
+
+      <!-- Mahasiswa 7 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Jesica+Rouli+Tua+Napitupulu&background=f59e0b&color=0a0a0a&bold=true&size=90"
+            alt="Jesica Rouli Tua Napitupulu"
+          />
+        </div>
+        <h4>Jesica Rouli Tua Napitupulu</h4>
+        <p>NIM: 41424007</p>
+      </div>
+
+      <!-- Mahasiswa 8 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/8.jpg" alt="Bintang Jesisca Tanjung" />
+        </div>
+        <h4>Bintang Jesisca Tanjung</h4>
+        <p>NIM: 41424008</p>
+      </div>
+
+      <!-- Mahasiswa 9 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/9.jpg" alt="Angie Solita Sitorus" />
+        </div>
+        <h4>Angie Solita Sitorus</h4>
+        <p>NIM: 41424009</p>
+      </div>
+
+      <!-- Mahasiswa 10 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/10.jpg" alt="De Pedro Monang Pane" />
+        </div>
+        <h4>De Pedro Monang Pane</h4>
+        <p>NIM: 41424010</p>
+      </div>
+
+      <!-- Mahasiswa 11 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/11.jpg" alt="Crisman Oliver Siagian" />
+        </div>
+        <h4>Crisman Oliver Siagian</h4>
+        <p>NIM: 41424011</p>
+      </div>
+
+      <!-- Mahasiswa 12 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/12.jpg" alt="Michael Gokma Tua Hutajulu" />
+        </div>
+        <h4>Michael Gokma Tua Hutajulu</h4>
+        <p>NIM: 41424012</p>
+      </div>
+
+      <!-- Mahasiswa 13 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/13.jpg" alt="Arjuna Melix Sihombing" />
+        </div>
+        <h4>Arjuna Melix Sihombing</h4>
+        <p>NIM: 41424013</p>
+      </div>
+
+      <!-- Mahasiswa 14 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/14.jpg" alt="Tristan Pandris Pasaribu" />
+        </div>
+        <h4>Tristan Pandris Pasaribu</h4>
+        <p>NIM: 41424014</p>
+      </div>
+
+      <!-- Mahasiswa 15 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/15.jpg" alt="Samuel Bona Tua Hutagaol" />
+        </div>
+        <h4>Samuel Bona Tua Hutagaol</h4>
+        <p>NIM: 41424015</p>
+      </div>
+
+      <!-- Mahasiswa 16 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/16.jpg"
+            alt="Ruben Kristian Hamonangan Tambunan"
+          />
+        </div>
+        <h4>Ruben Kristian Hamonangan Tambunan</h4>
+        <p>NIM: 41424016</p>
+      </div>
+
+      <!-- Mahasiswa 17 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/17.jpg" alt="Jamot Togu Suryadi Sigiro" />
+        </div>
+        <h4>Jamot Togu Suryadi Sigiro</h4>
+        <p>NIM: 41424017</p>
+      </div>
+
+      <!-- Mahasiswa 18 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/18.jpg"
+            alt="Chantique Amorelia Shetty Nababan"
+          />
+        </div>
+        <h4>Chantique Amorelia Shetty Nababan</h4>
+        <p>NIM: 41424018</p>
+      </div>
+
+      <!-- Mahasiswa 19 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/19.jpg" alt="Lastri Anna Hutagalung" />
+        </div>
+        <h4>Lastri Anna Hutagalung</h4>
+        <p>NIM: 41424019</p>
+      </div>
+
+      <!-- Mahasiswa 20 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/20.jpg"
+            alt="Novsiana Ribka Masnauli Silalahi"
+          />
+        </div>
+        <h4>Novsiana Ribka Masnauli Silalahi</h4>
+        <p>NIM: 41424020</p>
+      </div>
+
+      <!-- Mahasiswa 21 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/21.jpg"
+            alt="Neuree Daniela Gianik Siagian"
+          />
+        </div>
+        <h4>Neuree Daniela Gianik Siagian</h4>
+        <p>NIM: 41424021</p>
+      </div>
+
+      <!-- Mahasiswa 22 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/22.jpg" alt="Haryati Hutapea" />
+        </div>
+        <h4>Haryati Hutapea</h4>
+        <p>NIM: 41424022</p>
+      </div>
+
+      <!-- Mahasiswa 23 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/23.jpg" alt="Win Grace Sitanggang" />
+        </div>
+        <h4>Win Grace Sitanggang</h4>
+        <p>NIM: 41424023</p>
+      </div>
+
+      <!-- Mahasiswa 24 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/24.jpg"
+            alt="Krisna Putra Immanuel Lumbantoruan"
+          />
+        </div>
+        <h4>Krisna Putra Immanuel Lumbantoruan</h4>
+        <p>NIM: 41424024</p>
+      </div>
+
+      <!-- Mahasiswa 25 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/25.jpg" alt="Yoel Lasova Hutabarat" />
+        </div>
+        <h4>Yoel Lasova Hutabarat</h4>
+        <p>NIM: 41424025</p>
+      </div>
+
+      <!-- Mahasiswa 26 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/26.jpg" alt="Shinta Eldo Marpaung" />
+        </div>
+        <h4>Shinta Eldo Marpaung</h4>
+        <p>NIM: 41424026</p>
+      </div>
+
+      <!-- Mahasiswa 27 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/27.jpg" alt="Galde Rylin Hutasoit" />
+        </div>
+        <h4>Galde Rylin Hutasoit</h4>
+        <p>NIM: 41424027</p>
+      </div>
+
+      <!-- Mahasiswa 28 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/28.jpg" alt="Rosseva Aprilia Tamba" />
+        </div>
+        <h4>Rosseva Aprilia Tamba</h4>
+        <p>NIM: 41424028</p>
+      </div>
+
+      <!-- Mahasiswa 29 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/29.jpg" alt="Shandra Grace Nainggolan" />
+        </div>
+        <h4>Shandra Grace Nainggolan</h4>
+        <p>NIM: 41424029</p>
+      </div>
+
+      <!-- Mahasiswa 30 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/30.jpg"
+            alt="Gracesya Angelina Simanjuntak"
+          />
+        </div>
+        <h4>Gracesya Angelina Simanjuntak</h4>
+        <p>NIM: 41424030</p>
+      </div>
+
+      <!-- Mahasiswa 31 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/31.jpg" alt="Elisabeth Putri Panggabean" />
+        </div>
+        <h4>Elisabeth Putri Panggabean</h4>
+        <p>NIM: 41424031</p>
+      </div>
+
+      <!-- Mahasiswa 32 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/32.jpg" alt="Rima Mutiara Gultom" />
+        </div>
+        <h4>Rima Mutiara Gultom</h4>
+        <p>NIM: 41424032</p>
+      </div>
+
+      <!-- Mahasiswa 33 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/33.jpg"
+            alt="Nicky Rotin Suluh Manullang"
+          />
+        </div>
+        <h4>Nicky Rotin Suluh Manullang</h4>
+        <p>NIM: 41424033</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="studentsList2" class="students-view">
     <button class="btn-back" onclick="backToDosen()">← Kembali</button>
-    <h2 class="section-title">Mahasiswa Bimbingan Dosen Dr. Arnaldo Marulitua Sinaga, ST., M.InfoTech.</h2>
+    <h2 class="section-title">
+      Mahasiswa Bimbingan Dosen Dr. Arnaldo Marulitua Sinaga, ST., M.InfoTech.
+    </h2>
     <div class="students-grid">
-        <!-- Mahasiswa 34 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/34.jpg" alt="Immanuel Parlin Simorangkir">
-            </div>
-            <h4>Immanuel Parlin Simorangkir</h4>
-            <p>NIM: 41424034</p>
+      <!-- Mahasiswa 34 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/34.jpg"
+            alt="Immanuel Parlin Simorangkir"
+          />
         </div>
-        
-        <!-- Mahasiswa 35 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/35.jpg" alt="Gery Fajar Nugraha Nababan">
-            </div>
-            <h4>Gery Fajar Nugraha Nababan</h4>
-            <p>NIM: 41424035</p>
-        </div>
-        
-        <!-- Mahasiswa 36 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Josep+Mangasi+Silaen&background=f59e0b&color=0a0a0a&bold=true&size=90" alt="Josep Mangasi Silaen">
-            </div>
-            <h4>Josep Mangasi Silaen</h4>
-            <p>NIM: 41424036</p>
-        </div>
-        
-        <!-- Mahasiswa 37 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/37.jpg" alt="Jesley Brillian Sinaga">
-            </div>
-            <h4>Jesley Brillian Sinaga</h4>
-            <p>NIM: 41424037</p>
-        </div>
-        
-        <!-- Mahasiswa 38 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/38.jpg" alt="Binsar Immanuel Siregar">
-            </div>
-            <h4>Binsar Immanuel Siregar</h4>
-            <p>NIM: 41424038</p>
-        </div>
-        
-        <!-- Mahasiswa 39 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/39.jpg" alt="Hugo Henock Morales Simorangkir">
-            </div>
-            <h4>Hugo Henock Morales Simorangkir</h4>
-            <p>NIM: 41424039</p>
-        </div>
-        
-        <!-- Mahasiswa 40 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/40.jpg" alt="Febri Silaen">
-            </div>
-            <h4>Febri Silaen</h4>
-            <p>NIM: 41424040</p>
-        </div>
-        
-        <!-- Mahasiswa 41 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/42.jpg" alt="Marojahan Christian Cokiray Hutahaean">
-            </div>
-            <h4>Marojahan Christian Cokiray Hutahaean</h4>
-            <p>NIM: 41424042</p>
-        </div>
-        
-        <!-- Mahasiswa 42 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/43.jpg" alt="Aldi Fahrel Nababan">
-            </div>
-            <h4>Aldi Fahrel Nababan</h4>
-            <p>NIM: 41424043</p>
-        </div>
-        
-        <!-- Mahasiswa 43 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/44.jpg" alt="Markus Yogo Septian Saragi">
-            </div>
-            <h4>Markus Yogo Septian Saragi</h4>
-            <p>NIM: 41424044</p>
-        </div>
-        
-        <!-- Mahasiswa 44 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/45.jpg" alt="Petrus Frans Firdaus Simbolon">
-            </div>
-            <h4>Petrus Frans Firdaus Simbolon</h4>
-            <p>NIM: 41424045</p>
-        </div>
-        
-        <!-- Mahasiswa 45 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/46.jpg" alt="Jonathan Raja Basa Simamora">
-            </div>
-            <h4>Jonathan Raja Basa Simamora</h4>
-            <p>NIM: 41424046</p>
-        </div>
-        
-        <!-- Mahasiswa 46 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/47.jpg" alt="Paulus C.K. Manurung">
-            </div>
-            <h4>Paulus C.K. Manurung</h4>
-            <p>NIM: 41424047</p>
-        </div>
-        
-        <!-- Mahasiswa 47 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/48.jpg" alt="Steeven Generous Simarangkir">
-            </div>
-            <h4>Steeven Generous Simarangkir</h4>
-            <p>NIM: 41424048</p>
-        </div>
-        
-        <!-- Mahasiswa 48 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Johanna+Wendy+R+Tampubolon&background=f59e0b&color=0a0a0a&bold=true&size=90" alt="Johanna Wendy R Tampubolon">
-            </div>
-            <h4>Johanna Wendy R Tampubolon</h4>
-            <p>NIM: 41424049</p>
-        </div>
-        
-        <!-- Mahasiswa 49 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Epelina+Oktavia+Pangaribuan&background=fbbf24&color=0a0a0a&bold=true&size=90" alt="Epelina Oktavia Pangaribuan">
-            </div>
-            <h4>Epelina Oktavia Pangaribuan</h4>
-            <p>NIM: 41424050</p>
-        </div>
-        
-        <!-- Mahasiswa 50 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/51.jpg" alt="Kasih Immanuela Br Samosir">
-            </div>
-            <h4>Kasih Immanuela Br Samosir</h4>
-            <p>NIM: 41424051</p>
-        </div>
-        
-        <!-- Mahasiswa 51 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/52.jpg" alt="Stevani Rointan Nadeak">
-            </div>
-            <h4>Stevani Rointan Nadeak</h4>
-            <p>NIM: 41424052</p>
-        </div>
-        
-        <!-- Mahasiswa 52 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/53.jpg" alt="Octavia M. Sidabutar">
-            </div>
-            <h4>Octavia M. Sidabutar</h4>
-            <p>NIM: 41424053</p>
-        </div>
-        
-        <!-- Mahasiswa 53 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/54.jpg" alt="Nova Windyana Simanjuntak">
-            </div>
-            <h4>Nova Windyana Simanjuntak</h4>
-            <p>NIM: 41424054</p>
-        </div>
-        
-        <!-- Mahasiswa 54 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="https://ui-avatars.com/api/?name=Novi+Windyani+Simanjuntak&background=f59e0b&color=0a0a0a&bold=true&size=90" alt="Novi Windyani Simanjuntak">
-            </div>
-            <h4>Novi Windyani Simanjuntak</h4>
-            <p>NIM: 41424055</p>
-        </div>
-        
-        <!-- Mahasiswa 55 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/56.jpg" alt="Yohanna Agatha Bertha Sihombing">
-            </div>
-            <h4>Yohanna Agatha Bertha Sihombing</h4>
-            <p>NIM: 41424056</p>
-        </div>
-        
-        <!-- Mahasiswa 56 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/57.jpg" alt="Monalisa Dea Anastasya">
-            </div>
-            <h4>Monalisa Dea Anastasya</h4>
-            <p>NIM: 41424057</p>
-        </div>
-        
-        <!-- Mahasiswa 57 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/58.jpg" alt="Arimbi Angelica Sitohang">
-            </div>
-            <h4>Arimbi Angelica Sitohang</h4>
-            <p>NIM: 41424058</p>
-        </div>
-        
-        <!-- Mahasiswa 58 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/59.jpg" alt="Bethania Permai Simangunsong">
-            </div>
-            <h4>Bethania Permai Simangunsong</h4>
-            <p>NIM: 41424059</p>
-        </div>
-        
-        <!-- Mahasiswa 59 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/60.jpg" alt="Yohana Nababan">
-            </div>
-            <h4>Yohana Nababan</h4>
-            <p>NIM: 41424060</p>
-        </div>
-        
-        <!-- Mahasiswa 60 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/61.jpg" alt="Sonia Agatha Siahaan">
-            </div>
-            <h4>Sonia Agatha Siahaan</h4>
-            <p>NIM: 41424061</p>
-        </div>
-        
-        <!-- Mahasiswa 61 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/62.jpg" alt="Intan Sonia Siregar">
-            </div>
-            <h4>Intan Sonia Siregar</h4>
-            <p>NIM: 41424062</p>
-        </div>
-        
-        <!-- Mahasiswa 62 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/63.jpg" alt="Esthefany Christin Sipahutar">
-            </div>
-            <h4>Esthefany Christin Sipahutar</h4>
-            <p>NIM: 41424063</p>
-        </div>
-        
-        <!-- Mahasiswa 63 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/64.jpg" alt="Ramadhani Sihotang">
-            </div>
-            <h4>Ramadhani Sihotang</h4>
-            <p>NIM: 41424064</p>
-        </div>
-        
-        <!-- Mahasiswa 64 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/65.jpg" alt="Rahel Hasian Pardede">
-            </div>
-            <h4>Rahel Hasian Pardede</h4>
-            <p>NIM: 41424065</p>
-        </div>
-        
-        <!-- Mahasiswa 65 -->
-        <div class="student-card">
-            <div class="student-avatar">
-                <img src="images/mahasiswa/66.jpg" alt="Sarah Amelya Zalukhu">
-            </div>
-            <h4>Sarah Amelya Zalukhu</h4>
-            <p>NIM: 41424066</p>
-        </div>
-    </div>
-</div>
-    
+        <h4>Immanuel Parlin Simorangkir</h4>
+        <p>NIM: 41424034</p>
+      </div>
 
+      <!-- Mahasiswa 35 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/35.jpg" alt="Gery Fajar Nugraha Nababan" />
+        </div>
+        <h4>Gery Fajar Nugraha Nababan</h4>
+        <p>NIM: 41424035</p>
+      </div>
+
+      <!-- Mahasiswa 36 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Josep+Mangasi+Silaen&background=f59e0b&color=0a0a0a&bold=true&size=90"
+            alt="Josep Mangasi Silaen"
+          />
+        </div>
+        <h4>Josep Mangasi Silaen</h4>
+        <p>NIM: 41424036</p>
+      </div>
+
+      <!-- Mahasiswa 37 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/37.jpg" alt="Jesley Brillian Sinaga" />
+        </div>
+        <h4>Jesley Brillian Sinaga</h4>
+        <p>NIM: 41424037</p>
+      </div>
+
+      <!-- Mahasiswa 38 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/38.jpg" alt="Binsar Immanuel Siregar" />
+        </div>
+        <h4>Binsar Immanuel Siregar</h4>
+        <p>NIM: 41424038</p>
+      </div>
+
+      <!-- Mahasiswa 39 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/39.jpg"
+            alt="Hugo Henock Morales Simorangkir"
+          />
+        </div>
+        <h4>Hugo Henock Morales Simorangkir</h4>
+        <p>NIM: 41424039</p>
+      </div>
+
+      <!-- Mahasiswa 40 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/40.jpg" alt="Febri Silaen" />
+        </div>
+        <h4>Febri Silaen</h4>
+        <p>NIM: 41424040</p>
+      </div>
+
+      <!-- Mahasiswa 41 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/42.jpg"
+            alt="Marojahan Christian Cokiray Hutahaean"
+          />
+        </div>
+        <h4>Marojahan Christian Cokiray Hutahaean</h4>
+        <p>NIM: 41424042</p>
+      </div>
+
+      <!-- Mahasiswa 42 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/43.jpg" alt="Aldi Fahrel Nababan" />
+        </div>
+        <h4>Aldi Fahrel Nababan</h4>
+        <p>NIM: 41424043</p>
+      </div>
+
+      <!-- Mahasiswa 43 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/44.jpg" alt="Markus Yogo Septian Saragi" />
+        </div>
+        <h4>Markus Yogo Septian Saragi</h4>
+        <p>NIM: 41424044</p>
+      </div>
+
+      <!-- Mahasiswa 44 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/45.jpg"
+            alt="Petrus Frans Firdaus Simbolon"
+          />
+        </div>
+        <h4>Petrus Frans Firdaus Simbolon</h4>
+        <p>NIM: 41424045</p>
+      </div>
+
+      <!-- Mahasiswa 45 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/46.jpg"
+            alt="Jonathan Raja Basa Simamora"
+          />
+        </div>
+        <h4>Jonathan Raja Basa Simamora</h4>
+        <p>NIM: 41424046</p>
+      </div>
+
+      <!-- Mahasiswa 46 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/47.jpg" alt="Paulus C.K. Manurung" />
+        </div>
+        <h4>Paulus C.K. Manurung</h4>
+        <p>NIM: 41424047</p>
+      </div>
+
+      <!-- Mahasiswa 47 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/48.jpg"
+            alt="Steeven Generous Simarangkir"
+          />
+        </div>
+        <h4>Steeven Generous Simarangkir</h4>
+        <p>NIM: 41424048</p>
+      </div>
+
+      <!-- Mahasiswa 48 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Johanna+Wendy+R+Tampubolon&background=f59e0b&color=0a0a0a&bold=true&size=90"
+            alt="Johanna Wendy R Tampubolon"
+          />
+        </div>
+        <h4>Johanna Wendy R Tampubolon</h4>
+        <p>NIM: 41424049</p>
+      </div>
+
+      <!-- Mahasiswa 49 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Epelina+Oktavia+Pangaribuan&background=fbbf24&color=0a0a0a&bold=true&size=90"
+            alt="Epelina Oktavia Pangaribuan"
+          />
+        </div>
+        <h4>Epelina Oktavia Pangaribuan</h4>
+        <p>NIM: 41424050</p>
+      </div>
+
+      <!-- Mahasiswa 50 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/51.jpg" alt="Kasih Immanuela Br Samosir" />
+        </div>
+        <h4>Kasih Immanuela Br Samosir</h4>
+        <p>NIM: 41424051</p>
+      </div>
+
+      <!-- Mahasiswa 51 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/52.jpg" alt="Stevani Rointan Nadeak" />
+        </div>
+        <h4>Stevani Rointan Nadeak</h4>
+        <p>NIM: 41424052</p>
+      </div>
+
+      <!-- Mahasiswa 52 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/53.jpg" alt="Octavia M. Sidabutar" />
+        </div>
+        <h4>Octavia M. Sidabutar</h4>
+        <p>NIM: 41424053</p>
+      </div>
+
+      <!-- Mahasiswa 53 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/54.jpg" alt="Nova Windyana Simanjuntak" />
+        </div>
+        <h4>Nova Windyana Simanjuntak</h4>
+        <p>NIM: 41424054</p>
+      </div>
+
+      <!-- Mahasiswa 54 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="https://ui-avatars.com/api/?name=Novi+Windyani+Simanjuntak&background=f59e0b&color=0a0a0a&bold=true&size=90"
+            alt="Novi Windyani Simanjuntak"
+          />
+        </div>
+        <h4>Novi Windyani Simanjuntak</h4>
+        <p>NIM: 41424055</p>
+      </div>
+
+      <!-- Mahasiswa 55 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/56.jpg"
+            alt="Yohanna Agatha Bertha Sihombing"
+          />
+        </div>
+        <h4>Yohanna Agatha Bertha Sihombing</h4>
+        <p>NIM: 41424056</p>
+      </div>
+
+      <!-- Mahasiswa 56 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/57.jpg" alt="Monalisa Dea Anastasya" />
+        </div>
+        <h4>Monalisa Dea Anastasya</h4>
+        <p>NIM: 41424057</p>
+      </div>
+
+      <!-- Mahasiswa 57 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/58.jpg" alt="Arimbi Angelica Sitohang" />
+        </div>
+        <h4>Arimbi Angelica Sitohang</h4>
+        <p>NIM: 41424058</p>
+      </div>
+
+      <!-- Mahasiswa 58 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/59.jpg"
+            alt="Bethania Permai Simangunsong"
+          />
+        </div>
+        <h4>Bethania Permai Simangunsong</h4>
+        <p>NIM: 41424059</p>
+      </div>
+
+      <!-- Mahasiswa 59 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/60.jpg" alt="Yohana Nababan" />
+        </div>
+        <h4>Yohana Nababan</h4>
+        <p>NIM: 41424060</p>
+      </div>
+
+      <!-- Mahasiswa 60 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/61.jpg" alt="Sonia Agatha Siahaan" />
+        </div>
+        <h4>Sonia Agatha Siahaan</h4>
+        <p>NIM: 41424061</p>
+      </div>
+
+      <!-- Mahasiswa 61 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/62.jpg" alt="Intan Sonia Siregar" />
+        </div>
+        <h4>Intan Sonia Siregar</h4>
+        <p>NIM: 41424062</p>
+      </div>
+
+      <!-- Mahasiswa 62 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img
+            src="images/mahasiswa/63.jpg"
+            alt="Esthefany Christin Sipahutar"
+          />
+        </div>
+        <h4>Esthefany Christin Sipahutar</h4>
+        <p>NIM: 41424063</p>
+      </div>
+
+      <!-- Mahasiswa 63 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/64.jpg" alt="Ramadhani Sihotang" />
+        </div>
+        <h4>Ramadhani Sihotang</h4>
+        <p>NIM: 41424064</p>
+      </div>
+
+      <!-- Mahasiswa 64 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/65.jpg" alt="Rahel Hasian Pardede" />
+        </div>
+        <h4>Rahel Hasian Pardede</h4>
+        <p>NIM: 41424065</p>
+      </div>
+
+      <!-- Mahasiswa 65 -->
+      <div class="student-card">
+        <div class="student-avatar">
+          <img src="images/mahasiswa/66.jpg" alt="Sarah Amelya Zalukhu" />
+        </div>
+        <h4>Sarah Amelya Zalukhu</h4>
+        <p>NIM: 41424066</p>
+      </div>
+    </div>
+  </div>
 </div>
